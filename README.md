@@ -1,30 +1,42 @@
-# Minecraft in html
+# Minecraft-in-html
+
+**Live demo:** https://chandrasen74.github.io/Minecraft-in-html/  
+**Repository:** https://github.com/Chandrasen74/Minecraft-in-html
+
+![Screenshot of Minecraft-in-html](screenshot.png)
 
 ## Overview
-**Minecraft-in-html** is a HTML project with a browser-viewable demo (GitHub Pages).
+`Minecraft-in-html` is a HTML project.
+- **Primary language:** HTML
+- **Languages detected:** HTML
+- **Stack/tech:** HTML
 
-- Primary language: **HTML**
-- Detected stack: HTML
+## Language & stack details
+- Languages: HTML
+- Frameworks/tools/libraries: HTML
 
-**Live/demo:** https://chandrasen74.github.io/Minecraft-in-html/
+## How to install & run
+### Prerequisites
+- A modern web browser
+- (Optional) [Python 3](https://www.python.org/) or any static file server for local serving
 
-## Repository contents
-- `JScarft.html`
-- `README.md`
-- `controls.txt`
-
-## Getting started
+### Run locally
 ```bash
 git clone https://github.com/Chandrasen74/Minecraft-in-html.git
 cd Minecraft-in-html
-# open index.html in a browser, or serve locally:
+```
+- **Option 1:** open `index.html` directly in your browser
+- **Option 2:** serve locally (recommended for some JS features):
+```bash
 python -m http.server 8000
+# then open http://localhost:8000
 ```
 
+## Repository structure (top-level/sample)
+- `JScarft.html`
+- `README.md`
+- `controls.txt`
+- `screenshot.png`
+
 ## Status
-README generated/updated as part of a profile-wide documentation pass based on repository contents.
-
-## Previous README (reference)
-
-# Minecraft-in-html
-Want to play minecraft don't have money or want in browser click here
+Documented with screenshot, language/stack details, and setup instructions as part of a profile-wide README update.
