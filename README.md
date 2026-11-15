@@ -6,12 +6,14 @@
 ![Screenshot of Minecraft-in-html](screenshot.png)
 
 ## Overview
-`Minecraft-in-html` is a HTML project.
+`Minecraft-in-html` is a Minecraft-inspired voxel sandbox running in the browser (HTML/CSS/JS).
 - **Primary language:** HTML
 - **Languages detected:** HTML
-- **Stack/tech:** HTML
-- **Entry point:** `index.html`
-- **Key files:** `index.html`
+- **Stack/tech:** HTML, CSS, JavaScript (single-file game logic)
+- **Entry point:** `index.html` (redirects to `JScarft.html`)
+- **Key files:** `index.html`, `JScarft.html`, `controls.txt`
+
+Updated to Minecraft version 2.
 
 ## Language & stack details
 - Languages: HTML
