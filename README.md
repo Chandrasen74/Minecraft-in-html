@@ -4,10 +4,10 @@
 **Repository:** https://github.com/Chandrasen74/Minecraft-in-html
 
 ## Screenshots
-![Screenshot 1](screenshot-1.png)
-![Screenshot 2](screenshot-2.png)
-![Screenshot 3](screenshot-3.png)
-![Screenshot 4](screenshot-4.png)
+![Screenshot 1](screenshot-1.jpg)
+![Screenshot 2](screenshot-2.jpg)
+![Screenshot 3](screenshot-3.jpg)
+![Screenshot 4](screenshot-4.jpg)
 
 ## Overview
 `Minecraft-in-html` is a Minecraft-inspired voxel sandbox running in the browser (HTML/CSS/JS).
@@ -47,10 +47,10 @@ python -m http.server 8000
 - `controls.txt`
 - `index.html`
 - `screenshot.png`
-- `screenshot-1.png`
-- `screenshot-2.png`
-- `screenshot-3.png`
-- `screenshot-4.png`
+- `screenshot-1.jpg`
+- `screenshot-2.jpg`
+- `screenshot-3.jpg`
+- `screenshot-4.jpg`
 
 ## Status
 Documented with screenshot, language/stack details, and setup instructions as part of a profile-wide README update.
