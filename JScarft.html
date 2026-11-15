@@ -1,3 +1,4 @@
+﻿
 <!DOCTYPE html>
 <!--
   Copyright (c) 2026 Chandrasen. All rights reserved.
@@ -5,7 +6,7 @@
   Unauthorized copying, modification, distribution, or use is prohibited.
 -->
 
-<script async src="https://lol.io/widget.min.js#SXrvhKhG"></script>
+<script async src="https://arc.io/widget.min.js#SXrvhKhG"></script>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -104,13 +105,12 @@
 	<div id="quota" class="hidden"></div>
 	<div id="onhover" class="hidden"></div>
 	<p id="savedirections" class="hidden" style="position: absolute; top: 40px; left: 10px; z-index: 1; background-color: rgba(255, 255, 255, 0.3);">
-		Minecraft!
+		JSCRAFT!
 	</p>
 	<div class="world-select hidden" id="worlds"></div>
 	<p id="message" class="hidden" style="position: absolute; top: 10px; right: 10px; z-index: 1; text-align: right; background-color: rgba(255, 255, 255, 0.3);"></p>
 	<script>
-		// Code edits will erase the world.
-		// Place save code here to load your world. Make extra sure you got it copied so you don't paste in the wrong thing and delete your world on accident lol
+		
 		var loadString = ""
 	</script>
 	<script type="x-shader/vertex" id="blockVertexShader">
@@ -201,9 +201,7 @@ var hoverbox = document.getElementById("onhover")
 ctx.canvas.width  = window.innerWidth
 ctx.canvas.height = window.innerHeight
 
-/* Set this text editor to max width by copying this into the JS console:
-document.getElementsByClassName("_1chbfei")[0].setAttribute('style', 'max-width: 100vw !important')
-*/
+
 var MathGlob = Math
 function MineKhan() {
 	let Math = MathGlob
@@ -585,14 +583,12 @@ function MineKhan() {
 	},
 	{ name: "whiteTerracotta" },
 	{ name: "sidewaysPillar" },
-		// { // I swear, if y'all don't stop asking about TNT every 5 minutes!
-		// 	 name: "tnt",
-		// 	 textures: ["tntBottom", "tntTop", "tntSides"]
-		// },
+		
+		
 	]
 	const BLOCK_COUNT = blockData.length;
 
-	//Set defaults on blockData
+	
 	(function() {
 		for (let i = 1; i < BLOCK_COUNT; i++) {
 			let data = blockData[i]
@@ -608,7 +604,7 @@ function MineKhan() {
 				data.textures[4] = data.textures[2]
 				data.textures[5] = data.textures[2]
 			} else if (data.textures.length === 2) {
-			// Top and bottom are the first texture, sides are the second.
+			
 				data.textures[2] = data.textures[1]
 				data.textures[3] = data.textures[2]
 				data.textures[4] = data.textures[2]
@@ -660,10 +656,10 @@ function MineKhan() {
 	})()
 	let worldSeed
 
-	//The noise and random functions are copied from the processing.js source code; these others are polyfills made by me to avoid needing to remove all the pjs draw calls
+	
 	let currentRandom = null
 	function Marsaglia(i1, i2) {
-	// from http://www.math.uni-bielefeld.de/~sillke/ALGORITHMS/random/marsaglia-c
+	
 		let z = (i1 | 0) || 362436069, w = i2 || hash(521288629, z) * 2147483647 | 0
 
 		let nextInt = function() {
@@ -697,9 +693,7 @@ function MineKhan() {
 	function PerlinNoise(seed) {
 		let rnd = seed !== undefined ? new Marsaglia(seed) : Marsaglia.createRandomized()
 		let i, j
-		// http://www.noisemachine.com/talk1/17b.html
-		// http://mrl.nyu.edu/~perlin/noise/
-		// generate permutation
+		
 		let perm = new Uint8Array(512)
 		for(i=0;i<256;++i) {
 			perm[i] = i
@@ -707,13 +701,13 @@ function MineKhan() {
 		for(i=0;i<256;++i) {
 			let t = perm[j = rnd.nextInt() & 0xFF]; perm[j] = perm[i]; perm[i] = t
 		}
-		// copy to avoid taking mod in perm[0]
+		
 		for(i=0;i<256;++i) {
 			perm[i + 256] = perm[i]
 		}
 
 		function grad3d(i,x,y,z) {
-			let h = i & 15; // convert into 12 gradient directions
+			let h = i & 15; 
 			let u = h<8 ? x : y,
 				v = h<4 ? y : h===12||h===14 ? x : z
 			return ((h&1) === 0 ? u : -u) + ((h&2) === 0 ? v : -v)
@@ -785,6 +779,7 @@ function MineKhan() {
 	}
 
 	let caveNoise
+	
 	function openSimplexNoise(clientSeed) {
 		const SQ4 = 2
 		const toNums = function(s) { return s.split(",").map(function(s) { return new Uint8Array(s.split("").map(function(v) { return Number(v) })) }) }
@@ -995,8 +990,7 @@ function MineKhan() {
 
 			request.onupgradeneeded = function(event) {
 				let DB = event.target.result
-				// Worlds will contain and ID containing the timestamp at which the world was created, a "saved" timestamp,
-				// and a "data" string that's identical to the copy/paste save string
+				
 				let store = DB.createObjectStore("worlds", { keyPath: "id" })
 				store.createIndex("id", "id", { unique: true })
 				store.createIndex("data", "data", { unique: false })
@@ -1067,7 +1061,7 @@ function MineKhan() {
 		}).then(() => world.edited = Date.now()).catch(e => console.error(e))
 	}
 
-	// Expose these functions to the global scope for debugging
+	
 	win.saveToDB = saveToDB
 	win.loadFromDB = loadFromDB
 	win.createDatabase = createDatabase
@@ -1075,9 +1069,9 @@ function MineKhan() {
 
 	//globals
 	//{
-	let version = "Alpha"
-	let reach = 100 // Max distance player can place or break blocks
-	let sky = [0.33, 0.54, 0.72] // 0 to 1 RGB color scale
+	let version = "Beta"
+	let reach = 500 
+	let sky = [0.33, 0.54, 0.72] 
 	let superflat = false
 	let trees = true
 	let caves = true
@@ -1089,11 +1083,11 @@ function MineKhan() {
 
 	let currentFov
 
-	// Configurable and savable settings
+	
 	let settings = {
 		renderDistance: 10,
-		fov: 70, // Field of view in degrees
-		mouseSense: 100 // Mouse sensitivity as a percentage of the default
+		fov: 70, 
+		mouseSense: 100 
 	}
 	let locked = true
 	let generatedChunks
@@ -1104,10 +1098,10 @@ function MineKhan() {
 	if (height === 400) alert("Canvas is too small. Click the \"Settings\" button to the left of the \"Vote Up\" button under the editor and change the height to 600.")
 
 	let generator = {
-		height: 80, // Height of the hills
-		smooth: 0.01, // Smoothness of the terrain
-		extra: 30, // Extra height added to the world.
-		caveSize: 0.00 // Redefined right above where it's used
+		height: 80, 
+		smooth: 0.01, 
+		extra: 30, 
+		caveSize: 1000.00 
 	}
 	let maxHeight = 255
 	let blockOutlines = false
@@ -1121,7 +1115,7 @@ function MineKhan() {
 	const SOUTH    = 0x800
 	const EAST     = 0x1000
 	const WEST     = 0x1800
-	const ROTATION = 0x1800 // Mask for the direction bits
+	const ROTATION = 0x1800 
 	let blockMode  = CUBE
 	let tex
 	let textureMap
@@ -4513,7 +4507,7 @@ function MineKhan() {
 		Button.add(width / 2, 395, width / 3, 40, "Back", "comingsoon menu", r => changeScene(previousScreen))
 
 		// Multiplayer buttons
-		Button.add(width / 2, 395, width / 3, 40, "¯\\_(ツ)_/¯", "multiplayer menu", r => changeScene("main menu"))
+		Button.add(width / 2, 395, width / 3, 40, "Â¯\\_(ãƒ„)_/Â¯", "multiplayer menu", r => changeScene("main menu"))
 
 		// Settings Sliders
 		Slider.add(width/2, 245, width / 3, 40, "options", "Render Distance", 1, 32, "renderDistance", val => settings.renderDistance = Math.round(val))
@@ -5445,7 +5439,7 @@ function MineKhan() {
 	// Define all the scene draw functions
 	(function() {
 		function title() {
-			let title = "JSCRAFT"
+			let title = "MINECRAFT"
 			let subtext = "MINECRAFT IN JAVASCRIPT"
 			let font = "Poppins"
 			strokeWeight(1)
